@@ -18,9 +18,18 @@ import { useEventListener, useState } from 'off-the-hook';
 
 function App() {
   const [ content, setContent ] = useState('Is not scrolling');
-  
+  const elementRef = useRef(null);
+
+  // listen to scroll events on window  
   useEventListener('scroll', () => setContent('Scrolling...'));
-  return <p>{content}</p>;
+
+  // listen to resize events on document
+  useEventListener('resize', () => setContent('Resizing...'), document);
+
+  // Listen to click events on `elementRef`
+  useEventListener('click', () => setContent('Clicked!'), elementRef);
+
+  return <div ref={elementRef}>{content}</div>;
 };
 ```
 
