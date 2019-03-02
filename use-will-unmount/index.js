@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-export default function useComponentUnmount(handler) {
+export default function useWillUnmount(handler) {
   useEffect(() => {
     return () => {
       handler();

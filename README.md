@@ -33,6 +33,26 @@ function App() {
 };
 ```
 
+#### [`useFetch`](#usefetch)
+
+```jsx
+import React from 'react';
+import { useFetch } from 'off-the-hook';
+
+function App() {
+  const { error, data, loading } = useState('https://myapi.com/user/123');
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error.message}</div>;
+  }
+
+  return <div>{data.user}</div>;
+};
+```
+
 #### [`useComponentUnmount`](#usecomponentunmount)
 
 Similar to `componentWillUnmount`. Dispatchs a handler when the component will unmount.
