@@ -76,6 +76,40 @@ const Demo = () => {
 };
 ```
 
+#### [`useWindow`](#usewindow)
+
+You can just check window properties.
+
+```jsx
+import React from 'react';
+import { useWindow } from 'off-the-hook';
+
+const Demo = () => {
+  const { width, height, screen } = useWindow();
+
+  return <p>{ width }px, { height }px</p>
+};
+```
+
+Also listen for specific properties changes
+
+```jsx
+import React from 'react';
+import { useWindow, useState } from 'off-the-hook';
+
+const Demo = () => {
+  const [ status, setStatus ] = useState('');
+  const { navigator: { connection } } = useWindow(
+    () => { setStatus('updating...') },
+    ['navigator.connection']
+  );
+
+  return (
+    <p>Your downlink is: { connection.downlink }</p>
+    <p>{ status }</p>
+};
+```
+
 #### [`useDebounce`](#usedebounce)
 
 Inspired API by [react-use's useDebounce](https://github.com/streamich/react-use/blob/master/docs/useDebounce.md).
@@ -84,7 +118,7 @@ The debounce timeout will start when one of the values in third argument changes
 
 ```jsx
 import React from 'react';
-import { useDebounce } from 'off-the-hook';
+import { useDebounce, useState } from 'off-the-hook';
 
 const Demo = () => {
   const [ content, setContent ] = useState('Content Placeholder');
