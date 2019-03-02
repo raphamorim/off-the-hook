@@ -8,7 +8,23 @@ A custom Hook is a JavaScript function whose name starts with ”use” and that
 
 ## Hooks
 
-#### `useOffline`
+#### ![`useEventListener`](#useeventlistener)
+
+You can also specify the target just passing it as the third argument (default is `window`).
+
+```jsx
+import React from 'react';
+import { useEventListener, useState } from 'off-the-hook';
+
+function App() {
+  const [ content, setContent ] = useState('Is not scrolling');
+  
+  useEventListener('scroll', () => setContent('Scrolling...'));
+  return <p>{content}</p>;
+};
+```
+
+#### ![`useOffline`](#useoffline)
 
 ```jsx
 import React from 'react';
