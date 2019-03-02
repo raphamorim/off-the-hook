@@ -132,16 +132,16 @@ const Demo = () => {
 };
 ```
 
-#### [`useComponentUnmount`](#usecomponentunmount)
+#### [`useWillUnmount`](#usewillunmount)
 
 Similar to `componentWillUnmount`. Dispatchs a handler when the component will unmount.
 
 ```jsx
 import React from 'react';
-import { useComponentUnmount } from 'off-the-hook';
+import { useWillUnmount } from 'off-the-hook';
 
 function App() {  
-  useComponentUnmount(() => alert('componentWillUnmount'));
+  useWillUnmount(() => alert('componentWillUnmount'));
   return <div>Noice</div>;
 };
 ```
