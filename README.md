@@ -24,6 +24,20 @@ function App() {
 };
 ```
 
+#### [`useComponentUnmount`](#usecomponentunmount)
+
+Dispatch a handler when the component unmount. Similar to `componentWillUnmount`.
+
+```jsx
+import React from 'react';
+import { useComponentUnmount } from 'off-the-hook';
+
+function App() {  
+  useComponentUnmount(() => alert('componentWillUnmount'));
+  return <div>Noice</div>;
+};
+```
+
 #### [`useOffline`](#useoffline)
 
 ```jsx
