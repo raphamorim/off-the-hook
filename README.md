@@ -14,7 +14,7 @@ You can also specify the target just passing it as the third argument (default i
 
 ```jsx
 import React from 'react';
-import { useEventListener, useState } from 'off-the-hook';
+import { useEventListener, useRef, useState } from 'off-the-hook';
 
 function App() {
   const [ content, setContent ] = useState('Is not scrolling');
