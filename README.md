@@ -53,6 +53,51 @@ function App() {
 };
 ```
 
+#### [`useError`](#useError)
+
+Hook that creates a dispatcher for errors, that can be caught with error boundaries.
+
+```jsx
+import React from 'react';
+import { useError } from 'off-the-hook';
+
+const Demo = () => {
+  const [ raiseError ] = useError();
+
+  useEffect(() => {
+    raiseError(
+      new Error(
+        "Could not work with setTimeout for some reason!"
+      )
+    )
+  });
+
+  return <div>Noice</div>;
+};
+```
+
+#### [`useDebounce`](#usedebounce)
+
+Inspired API by [react-use's useDebounce](https://github.com/streamich/react-use/blob/master/docs/useDebounce.md).
+
+The debounce timeout will start when one of the values in third argument changes.
+
+```jsx
+import React from 'react';
+import { useDebounce } from 'off-the-hook';
+
+const Demo = () => {
+  const [ content, setContent ] = useState('Content Placeholder');
+
+  useDebounce(() => setContent('Content Placeholder'), 1000, [ content ]);
+  return (
+    <div onClick={() => { setContent('Clicked') }}>
+      { content }
+    </div>
+  );
+};
+```
+
 #### [`useComponentUnmount`](#usecomponentunmount)
 
 Similar to `componentWillUnmount`. Dispatchs a handler when the component will unmount.
