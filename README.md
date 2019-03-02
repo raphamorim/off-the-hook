@@ -26,7 +26,7 @@ function App() {
 
 #### [`useComponentUnmount`](#usecomponentunmount)
 
-Dispatch a handler when the component unmount. Similar to `componentWillUnmount`.
+Similar to `componentWillUnmount`. Dispatchs a handler when the component will unmount.
 
 ```jsx
 import React from 'react';
@@ -35,6 +35,30 @@ import { useComponentUnmount } from 'off-the-hook';
 function App() {  
   useComponentUnmount(() => alert('componentWillUnmount'));
   return <div>Noice</div>;
+};
+```
+
+#### [`useDidUpdate`](#usecomponentunmount)
+
+Similar to `componentDidUpdate`. Dispatchs a handler when the component just updated.
+
+```jsx
+import React from 'react';
+import { useDidUpdate, useState } from 'off-the-hook';
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  useDidUpdate(() => alert('componentDidUpdate'));
+  
+  return (
+    <React.Fragment>
+      <p>{count}</p>
+      <button onClick={() => { setCount(count + 1); }} >
+        Click Me!
+      </button>
+    </React.Fragment>
+  );
 };
 ```
 
