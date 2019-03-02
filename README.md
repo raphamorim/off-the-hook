@@ -8,9 +8,9 @@ A custom Hook is a JavaScript function whose name starts with ”use” and that
 
 ## Hooks
 
-#### ![`useEventListener`](#useeventlistener)
+#### [`useEventListener`](#useeventlistener)
 
-You can also specify the target just passing it as the third argument (default is `window`).
+You can also specify the target just passing it as the third argument (default is `window`). It can be used to listen events of refs, e.g: check if the image is loaded, listen a custom Event [...]
 
 ```jsx
 import React from 'react';
@@ -24,7 +24,7 @@ function App() {
 };
 ```
 
-#### ![`useOffline`](#useoffline)
+#### [`useOffline`](#useoffline)
 
 ```jsx
 import React from 'react';
