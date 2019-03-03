@@ -40,7 +40,7 @@ import React from 'react';
 import { useFetch } from 'off-the-hook';
 
 function App() {
-  const { error, data, loading } = useState('https://myapi.com/user/123');
+  const { error, data, loading } = useFetch('https://myapi.com/user/123');
   if (loading) {
     return <div>Loading...</div>;
   }
